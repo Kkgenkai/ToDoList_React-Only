@@ -12,7 +12,10 @@ export default function App(){
       <h1 className="text-center">Todo List</h1>
       <input type="text" onChange={e => {const {value} = e.target; setItem(value);}} value={item}/>
       <Button variant="secondary" onClick={(e)=>{setLists(prevValue => [...prevValue, item])}}>Add</Button>
-      {lists.map(e => <li>{e}</li>)}
+      {lists.map((e, i) => <li onClick={() => {
+        const nValues = lists.filter((e, index) => i !== index);
+        setLists(nValues);
+      }}>{e}</li>)}
     </div>
   )
 }
