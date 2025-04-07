@@ -1,7 +1,9 @@
+import { useState } from 'react';
+import Item from './components/Item';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from 'react';
+
 
 export default function App(){
   const [item, setItem] = useState("");
@@ -17,10 +19,10 @@ export default function App(){
   }
 
   function list_Items(){
-    return lists.map((e, i) => <li onClick={() => {
+    return lists.map((e, i) => <Item onClick={() => {
       const nValues = lists.filter((e, index) => i !== index);
       setLists(nValues);
-    }}>{e}</li>)
+    }} todo={e}/>)
   }
 
 
