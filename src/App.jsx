@@ -25,7 +25,7 @@ export default function App(){
 
 
   return(
-    <div className="d-flex flex-direction flex-column mx-5" style={{width: "30%"}}>
+    <div className="holder d-flex flex-direction flex-column mx-5" style={{width: "30%"}}>
       <h1 className="text-center">Todo List</h1>
       <input type="text" onChange={handleChange} value={item}/>
       <Button variant="secondary" onClick={handleClick}>Add</Button>
