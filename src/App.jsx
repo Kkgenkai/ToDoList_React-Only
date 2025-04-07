@@ -16,6 +16,7 @@ export default function App(){
         const nValues = lists.filter((e, index) => i !== index);
         setLists(nValues);
       }}>{e}</li>)}
+      
     </div>
   )
 }
