@@ -1,0 +1,41 @@
+#root{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.holder{
+    background-color: #102E50;
+    color: #F5C45E;
+    padding-top: 10px;
+    border-bottom: 10px solid #102E50;
+    border-radius: 10px;
+
+    font-family: "Delius Swash Caps", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.todoInput{
+    border-radius: 0px !important;
+}
+
+.addItem{
+    border-radius: 0px !important;
+    background-color: #BE3D2A !important;
+    color: white !important;
+}
+.addItem:hover{
+    background-color: #F5C45E !important;
+    color: white !important;
+}
+.addItem:active{
+    background-color: #F5C45E !important;
+    color: #102E50 !important;
+    font-weight: 900 !important;
+}
+
+.list{
+    background-color: #F5C45E; 
+    color: #102E50;
+}
