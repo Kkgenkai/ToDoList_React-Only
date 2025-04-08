@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import List from './components/List';
-import Button from 'react-bootstrap/Button';
+
 import "bootstrap/dist/css/bootstrap.min.css";
+import Button from 'react-bootstrap/Button';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
+
+import List from './components/List';
+
 
 export default function App(){
   const [item, setItem] = useState("");
@@ -16,12 +19,13 @@ export default function App(){
 
   function handleClick(e){
     setList(prevValue => [...prevValue, item]);
+    setItem("");
   }
 
   function deleteItem(i){
     const nValues = list.filter((e, index) => i !== index);
     setList(nValues);
-}
+  }
 
 
   return(
@@ -31,10 +35,15 @@ export default function App(){
         controlId="floatingInput"
         label="Todo"
       >
-        <Form.Control className='todoInput' type="text" placeholder='buy milk' onChange={handleChange} value={item}/>
+        <Form.Control className='todoInput' type="text" placeholder='add todo' onChange={handleChange} value={item}/>
       </FloatingLabel>
       <Button className='addItem btn-outline-light' onClick={handleClick}>Add Item</Button>
-      <List className='list' list={list} deleteItem={deleteItem}/>
+      <List list={list} deleteItem={deleteItem}/>
+      <div className='counter d-flex justify-content-around py-2'>
+        <span>Total Items: {list.length}</span>
+        <span> Todo: 0</span>
+        <span> Done: 0</span>
+      </div>
     </div>
   )
 }

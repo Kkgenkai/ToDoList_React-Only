@@ -1,11 +1,10 @@
-import Item from './Item';
 import { v4 as uuidv4 } from 'uuid';
-import ListGroup from 'react-bootstrap/ListGroup';
+import Item from './Item';
 
 export default function List({list, deleteItem}){
     
     function list_Items(){
-        return list.map((e, i) => <ListGroup as="ul"><Item key={uuidv4()} onClick={()=> {deleteItem(i)}} todo={e}/></ListGroup>)
+        return list.map((e, i) => <Item key={uuidv4()} remove={()=> {deleteItem(i)}} todo={e}/>)
     }
 
     return(
